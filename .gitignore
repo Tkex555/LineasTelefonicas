@@ -1,0 +1,7 @@
+# Eclipse
+*.pyc
+.project
+.classpath
+.settings/
+bin/
+target/
