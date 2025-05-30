@@ -99,7 +99,7 @@ public class PanelOpciones extends JPanel implements ActionListener
         add(btnOpcion1);
 
         //Botón opción 2
-        btnOpcion2 = new JButton("Opción 2");
+        btnOpcion2 = new JButton("Opci�n 2");
         btnOpcion2.setActionCommand(OPCION_2);
         btnOpcion2.addActionListener(this);
         add(btnOpcion2);
