@@ -80,7 +80,7 @@ public class InterfazLineasTelefonicas extends JFrame
         // organizar el panel principal
         getContentPane( ).setLayout( new BorderLayout( ) );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setTitle( "Manejo lÃ­neas telefÃ³nicas" );
+        setTitle( "Manejo líneas telefónicas" );
 
         // Creaciï¿½n de los paneles aquï¿½
         panelImagen = new PanelImagen( );
@@ -125,7 +125,7 @@ public class InterfazLineasTelefonicas extends JFrame
      */
     public void agregarLlamada( int pNumeroLinea )
     {
-        String minutos = JOptionPane.showInputDialog( this, "NÃºmero de minutos hablados:", "Agregar llamada", JOptionPane.QUESTION_MESSAGE );
+        String minutos = JOptionPane.showInputDialog( this, "Número de minutos hablados:", "Agregar llamada", JOptionPane.QUESTION_MESSAGE );
         try
         {
             if( minutos != null )
@@ -133,7 +133,7 @@ public class InterfazLineasTelefonicas extends JFrame
                 int min = Integer.parseInt( minutos );
                 if( min <= 0 )
                 {
-                    JOptionPane.showMessageDialog( this, "El nÃºmero de minutos debe ser mayor a cero", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
+                    JOptionPane.showMessageDialog( this, "El número de minutos debe ser mayor a cero", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
                     return;
                 }
                 Object[] possibilities = { "Local", "Larga distancia", "Celular" };
@@ -191,7 +191,7 @@ public class InterfazLineasTelefonicas extends JFrame
         }
         catch( NumberFormatException e )
         {
-            JOptionPane.showMessageDialog( this, "El nÃºmero de minutos es invÃ¡lido", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog( this, "El número de minutos es inválido", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
         }
     }
 
@@ -225,7 +225,7 @@ public class InterfazLineasTelefonicas extends JFrame
         int totalMinutos = empresa.darTotalMinutos();
         double costoPromedio = empresa.darCostoPromedioMinuto();
 
-        String mensaje = "InformaciÃ³n Consolidada de LÃ­neas TelefÃ³nicas\n\n" +
+        String mensaje = "Información Consolidada de Líneas Telefónicas\n\n" +
                         "Costo Total: $" + String.format("%,.2f", costoTotal) + "\n" +
                         "Total Llamadas: " + totalLlamadas + "\n" +
                         "Total Minutos: " + totalMinutos + "\n" +
