@@ -1,6 +1,6 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -21,7 +21,7 @@ import javax.swing.UIManager;
 import uniandes.cupi2.lineasTelefonicas.mundo.Empresa;
 
 /**
- * Ventana principal de la aplicación.
+ * Ventana principal de la aplicaciï¿½n.
  */
 public class InterfazLineasTelefonicas extends JFrame
 {
@@ -45,17 +45,17 @@ public class InterfazLineasTelefonicas extends JFrame
     private PanelTotales panelTotales;
 
     /**
-     * Panel de la línea 1.
+     * Panel de la lï¿½nea 1.
      */
     private PanelLineaTelefonica panelLinea1;
 
     /**
-     * Panel de la línea 2.
+     * Panel de la lï¿½nea 2.
      */
     private PanelLineaTelefonica panelLinea2;
 
     /**
-     * Panel de la línea 3.
+     * Panel de la lï¿½nea 3.
      */
     private PanelLineaTelefonica panelLinea3;
 
@@ -69,7 +69,7 @@ public class InterfazLineasTelefonicas extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Constructor de la interfaz. <b>post: </b> Se inicializó la interfaz principal y sus paneles.<br>
+     * Constructor de la interfaz. <b>post: </b> Se inicializï¿½ la interfaz principal y sus paneles.<br>
      */
     public InterfazLineasTelefonicas( )
     {
@@ -80,9 +80,9 @@ public class InterfazLineasTelefonicas extends JFrame
         // organizar el panel principal
         getContentPane( ).setLayout( new BorderLayout( ) );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setTitle( "Manejo líneas telefónicas" );
+        setTitle( "Manejo lï¿½neas telefï¿½nicas" );
 
-        // Creación de los paneles aquí
+        // Creaciï¿½n de los paneles aquï¿½
         panelImagen = new PanelImagen( );
         getContentPane( ).add( panelImagen, BorderLayout.NORTH );
 
@@ -116,16 +116,16 @@ public class InterfazLineasTelefonicas extends JFrame
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
     /**
-     * Agrega una llamada a una línea telefónica. <br>
-     * @param pNumeroLinea Número de la línea telefónica. pNumeroLinea>0 && pNumeroLinea<4.
+     * Agrega una llamada a una lï¿½nea telefï¿½nica. <br>
+     * @param pNumeroLinea Nï¿½mero de la lï¿½nea telefï¿½nica. pNumeroLinea>0 && pNumeroLinea<4.
      */
     public void agregarLlamada( int pNumeroLinea )
     {
-        String minutos = JOptionPane.showInputDialog( this, "Número de minutos hablados:", "Agregar llamada", JOptionPane.QUESTION_MESSAGE );
+        String minutos = JOptionPane.showInputDialog( this, "Nï¿½mero de minutos hablados:", "Agregar llamada", JOptionPane.QUESTION_MESSAGE );
         try
         {
             if( minutos != null )
@@ -133,7 +133,7 @@ public class InterfazLineasTelefonicas extends JFrame
                 int min = Integer.parseInt( minutos );
                 if( min <= 0 )
                 {
-                    JOptionPane.showMessageDialog( this, "El número de minutos debe ser mayor a cero", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
+                    JOptionPane.showMessageDialog( this, "El nï¿½mero de minutos debe ser mayor a cero", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
                     return;
                 }
                 Object[] possibilities = { "Local", "Larga distancia", "Celular" };
@@ -191,13 +191,13 @@ public class InterfazLineasTelefonicas extends JFrame
         }
         catch( NumberFormatException e )
         {
-            JOptionPane.showMessageDialog( this, "El número de minutos es inválido", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog( this, "El nï¿½mero de minutos es invï¿½lido", "Agregar llamada", JOptionPane.ERROR_MESSAGE );
         }
     }
 
     /**
-     * Actualiza la visualización de la interfaz. <br>
-     * <b>post: </b> Se actualizó la información de la interfaz.<br>
+     * Actualiza la visualizaciï¿½n de la interfaz. <br>
+     * <b>post: </b> Se actualizï¿½ la informaciï¿½n de la interfaz.<br>
      */
     private void actualizar( )
     {
@@ -208,7 +208,7 @@ public class InterfazLineasTelefonicas extends JFrame
     }
 
     /**
-     * Reinicia las líneas telefónicas. <b>post: </b> Se reinició las líneas telefónicas.
+     * Reinicia las lï¿½neas telefï¿½nicas. <b>post: </b> Se reiniciï¿½ las lï¿½neas telefï¿½nicas.
      */
     public void reiniciar( )
     {
@@ -216,22 +216,33 @@ public class InterfazLineasTelefonicas extends JFrame
         actualizar( );
     }
 
-    // -----------------------------------------------------------------
-    // Puntos de Extensión
-    // -----------------------------------------------------------------
-
     /**
-     * Método para la extensión 1.
+     * Muestra la informaciÃ³n consolidada de todas las lÃ­neas telefÃ³nicas.
      */
-    public void reqFuncOpcion1( )
-    {
-        String resultado = empresa.metodo1( );
-        actualizar( );
-        JOptionPane.showMessageDialog( this, resultado, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+    public void mostrarInformacionConsolidada() {
+        double costoTotal = empresa.darTotalCostoLlamadas();
+        int totalLlamadas = empresa.darTotalNumeroLlamadas();
+        int totalMinutos = empresa.darTotalMinutos();
+        double costoPromedio = empresa.darCostoPromedioMinuto();
+
+        String mensaje = "InformaciÃ³n Consolidada de LÃ­neas TelefÃ³nicas\n\n" +
+                        "Costo Total: $" + String.format("%,.2f", costoTotal) + "\n" +
+                        "Total Llamadas: " + totalLlamadas + "\n" +
+                        "Total Minutos: " + totalMinutos + "\n" +
+                        "Costo Promedio por Minuto: $" + String.format("%,.2f", costoPromedio);
+
+        JOptionPane.showMessageDialog(this, mensaje, 
+                                    "Resumen Consolidado", 
+                                    JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    // Modificar el mÃ©todo de opciones para incluir el nuevo botÃ³n
+    public void reqFuncOpcion1() {
+        mostrarInformacionConsolidada();
     }
 
     /**
-     * Método para la extensión 2.
+     * Mï¿½todo para la extensiï¿½n 2.
      */
     public void reqFuncOpcion2( )
     {
@@ -245,7 +256,7 @@ public class InterfazLineasTelefonicas extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Método ejecuta la aplicación, creando una nueva interfaz.
+     * Mï¿½todo ejecuta la aplicaciï¿½n, creando una nueva interfaz.
      * @param pArgs Argumentos de el llamado. No se requiere ninguno.
      */
     public static void main( String[] pArgs )

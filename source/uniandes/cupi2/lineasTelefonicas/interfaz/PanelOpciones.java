@@ -1,6 +1,6 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 /**
- * Panel de manejo de las opciones de la aplicación.
+ * Panel de manejo de las opciones de la aplicaciï¿½n.
  */
 public class PanelOpciones extends JPanel implements ActionListener
 {
@@ -29,17 +29,17 @@ public class PanelOpciones extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Comando para reiniciar las lineas telefónicos.
+     * Comando para reiniciar las lineas telefï¿½nicos.
      */
     private static final String REINICIAR = "REINICIAR";
 
     /**
-     * Comando opción 1.
+     * Comando opciï¿½n 1.
      */
     private static final String OPCION_1 = "OPCION_1";
 
     /**
-     * Comando Opción 2
+     * Comando Opciï¿½n 2
      */
     private static final String OPCION_2 = "OPCION_2";
 
@@ -48,7 +48,7 @@ public class PanelOpciones extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicación.
+     * Ventana principal de la aplicaciï¿½n.
      */
     private InterfazLineasTelefonicas principal;
 
@@ -57,17 +57,17 @@ public class PanelOpciones extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Botón reiniciar.
+     * Botï¿½n reiniciar.
      */
     private JButton btnReiniciar;
 
     /**
-     * Botón opción 1.
+     * Botï¿½n opciï¿½n 1.
      */
     private JButton btnOpcion1;
 
     /**
-     * Botón opción 2.
+     * Botï¿½n opciï¿½n 2.
      */
     private JButton btnOpcion2;
 
@@ -77,42 +77,41 @@ public class PanelOpciones extends JPanel implements ActionListener
 
     /**
      * Constructor del panel.
-     * <b>post: </b> Se construyó el panel.
-     * @param pPrincipal Ventana principal de la aplicación. pPrincipal!=null.
+     * <b>post: </b> Se construyï¿½ el panel.
+     * @param pPrincipal Ventana principal de la aplicaciï¿½n. pPrincipal!=null.
      */
-    public PanelOpciones( InterfazLineasTelefonicas pPrincipal )
-    {
+    public PanelOpciones(InterfazLineasTelefonicas pPrincipal) {
         principal = pPrincipal;
 
-        setBorder( new TitledBorder( "Opciones" ) );
-        setLayout( new GridLayout( 1, 3 ) );
+        setBorder(new TitledBorder("Opciones"));
+        setLayout(new GridLayout(1, 3));
 
         //Reiniciar
-        btnReiniciar = new JButton( "Reiniciar" );
-        btnReiniciar.setActionCommand( REINICIAR );
-        btnReiniciar.addActionListener( this );
-        add( btnReiniciar );
+        btnReiniciar = new JButton("Reiniciar");
+        btnReiniciar.setActionCommand(REINICIAR);
+        btnReiniciar.addActionListener(this);
+        add(btnReiniciar);
 
-        //Botón opción 1
-        btnOpcion1 = new JButton( "Opción 1" );
-        btnOpcion1.setActionCommand( OPCION_1 );
-        btnOpcion1.addActionListener( this );
-        add( btnOpcion1 );
+        //BotÃ³n opciÃ³n 1 - Cambiar texto
+        btnOpcion1 = new JButton("Ver Resumen");  // Cambiamos el texto del botÃ³n
+        btnOpcion1.setActionCommand(OPCION_1);
+        btnOpcion1.addActionListener(this);
+        add(btnOpcion1);
 
-        //Botón opción 2
-        btnOpcion2 = new JButton( "Opción 2" );
-        btnOpcion2.setActionCommand( OPCION_2 );
-        btnOpcion2.addActionListener( this );
-        add( btnOpcion2 );
+        //BotÃ³n opciÃ³n 2
+        btnOpcion2 = new JButton("OpciÃ³n 2");
+        btnOpcion2.setActionCommand(OPCION_2);
+        btnOpcion2.addActionListener(this);
+        add(btnOpcion2);
     }
 
     //-----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     //-----------------------------------------------------------------
 
     /**
      * Manejo de los eventos de los botones.
-     * @param pEvento Evento de click sobre un botón. pEvento != null.
+     * @param pEvento Evento de click sobre un botï¿½n. pEvento != null.
      */
     public void actionPerformed( ActionEvent pEvento )
     {
